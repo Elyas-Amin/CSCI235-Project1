@@ -8,39 +8,39 @@ Book::Book() {
     available = false;
 }
 
-Book::Book(string title, string author, int page_count, bool available) {
-    this->title = title;
-    this->author = author; 
-    if (page_count > 0) {
-        this->page_count = page_count;
-    }
-    this->available = available;
+Book::Book(const string& title_, const string& author_, const int page_count_, const bool available_) {
+    title = title_;
+    author = author_; 
+    page_count = page_count_;
+    available = available_;
 }
 
-void Book::setTitle(string title) {
-    this->title=title;
+void Book::setTitle(const string& title_) {
+    title=title_;
 }
-string Book::getTitle() {
+string Book::getTitle() const {
     return title;
 }
 
-void Book::setAuthor(string author) {
-    this->author = author;
+void Book::setAuthor(const string& author_) {
+    author = author_;
 }
-string Book::getAuthor() {
+string Book::getAuthor() const {
     return author;
 }
 
-void Book::setPageCount(int page_count) {
-    this->page_count = page_count;
+void Book::setPageCount(const int page_count_) {
+    if (page_count_>0) {
+        page_count = page_count_;
+    }
 }
-int Book::getPageCount() {
+int Book::getPageCount() const {
     return page_count;
 }
 
 void Book::setDigital() {
     available = true;
 }
-bool Book::isDigital() {
+bool Book::isDigital() const {
     return available;
 }

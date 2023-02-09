@@ -18,17 +18,17 @@ private:
 public:
 
     Book();
-    Book(string title, string author, int page_count, bool available);
+    Book(const string& title_, const string& author_, const int page_count_, const bool available_ = false);
     
-    void setTitle(string title);
-    string getTitle();
+    void setTitle(const string& title_);
+    string getTitle() const;
 
-    void setAuthor(string author);
-    string getAuthor();
+    void setAuthor(const string& author_);
+    string getAuthor() const;
 
-    void setPageCount(int page_count);
-    int getPageCount();
+    void setPageCount(const int page_count_);
+    int getPageCount() const;
 
     void setDigital();
-    bool isDigital();
+    bool isDigital() const;
 };
